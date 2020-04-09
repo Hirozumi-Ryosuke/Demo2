@@ -14,7 +14,11 @@ fun main(){
                 }
             }
         }
-        if (!deleted) break
+        if (deleted.not()) break
     }
-    println(if (sb.isEmpty()) "YES" else "NO")
+    println(
+        when {
+            sb.isEmpty() -> "YES"
+            else -> "NO"
+        })
 }
