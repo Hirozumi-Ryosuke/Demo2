@@ -20,5 +20,6 @@ fun main(){
         when {
             sb.isEmpty() -> "YES"
             else -> "NO"
-        })
+        }
+    )
 }
