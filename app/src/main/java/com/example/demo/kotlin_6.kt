@@ -9,7 +9,7 @@ fun main(){
         words.forEach { word ->
             when {
                 sb.endsWith(word) -> {
-                    sb.delete(sb.length - word.length, sb.length)
+                    with(sb) { delete(length - word.length, length) }
                     deleted = true
                 }
             }
