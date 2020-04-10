@@ -14,13 +14,14 @@ fun main() {
             return innerSet.addAll(listOf(element))
         }
 
-        override fun addAll(c: Collection<T>): Boolean {
-            objectsAdded += c.size
-            return innerSet.addAll(c)
+        override fun addAll(elements: Collection<T>): Boolean {
+            objectsAdded += elements.size
+            return innerSet.addAll(elements)
         }
     }
 
-    val cset = CountingSet<Int>()
-    cset.addAll(listOf(1, 1, 2))
-    println("${cset.objectsAdded} objects were added, ${cset.size} remain")
+    val cset = CountingSet<Int>().also {
+        it.addAll(listOf(1, 1, 2))
+    }
+    println(cset.objectsAdded.toString() + " objects were added, " + cset.size + " remain")
 }
