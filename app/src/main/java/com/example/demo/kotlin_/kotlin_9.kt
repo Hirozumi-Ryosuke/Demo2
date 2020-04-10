@@ -1,4 +1,4 @@
-package com.example.demo
+package com.example.demo.kotlin_
 
 fun main() {
     val (a, b, c, x) = readLine()!!.split(" ").map(String::toInt)

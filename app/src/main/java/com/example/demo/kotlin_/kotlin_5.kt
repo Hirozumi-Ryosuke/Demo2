@@ -1,4 +1,4 @@
-package com.example.demo
+package com.example.demo.kotlin_
 
 fun main(){
     val n = readLine()!!.toInt()

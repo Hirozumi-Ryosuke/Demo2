@@ -11,13 +11,13 @@ fun main(){
                 val circumference = i + j + k
                 val twoSides = j + k
                 when {
-                    twoSides > i -> {
-                        println(circumference)
-                        return
-                    }
+                twoSides > i -> {
+                    println(circumference)
+                    return
                 }
             }
         }
-        println(ans)
+    }
+    println(ans)
     }
 }
