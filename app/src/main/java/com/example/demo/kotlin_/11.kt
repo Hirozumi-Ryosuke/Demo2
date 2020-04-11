@@ -11,8 +11,10 @@ fun main(){
     ): String {
         val result = StringBuilder(prefix)
 
-        for ((index, element) in collection.withIndex()) {
-            if (index > 0) result.append(separator)
+        collection.withIndex().forEach { (index, element) ->
+            when {
+                index > 0 -> result.append(separator)
+            }
             result.append(element)
         }
 
@@ -20,5 +22,5 @@ fun main(){
         return result.toString()
     }
     val list = listOf(1, 2, 3)
-    println(joinToString(collection = list, separator = " ", prefix = " ", postfix = "."))
+    println(joinToString(collection = list, separator = ",", prefix = "#", postfix = "."))
 }
