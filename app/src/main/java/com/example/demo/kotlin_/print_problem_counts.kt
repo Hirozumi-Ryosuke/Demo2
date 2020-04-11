@@ -6,12 +6,8 @@ fun main() {
         var serverErrors = 0
         responses.forEach {
             when {
-                it.startsWith("4") -> {
-                    clientErrors++
-                }
-                it.startsWith("5") -> {
-                    serverErrors++
-                }
+                it.startsWith("4") -> clientErrors++
+                it.startsWith("5") -> serverErrors++
             }
         }
         println("$clientErrors client errors, $serverErrors server errors")
