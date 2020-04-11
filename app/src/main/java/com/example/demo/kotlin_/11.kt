@@ -1,26 +1,22 @@
 package com.example.demo.kotlin_
 
-import java.lang.StringBuilder
-
-fun main(){
-    fun <T> joinToString(
-        collection: Collection<T>,
-        separator: String,
-        prefix: String,
-        postfix: String
-    ): String {
-        val result = StringBuilder(prefix)
-
-        collection.withIndex().forEach { (index, element) ->
+fun main() {
+    fun printProblemCounts(responses: Collection<String>) {
+        var clientErrors = 0
+        var serverErrors = 0
+        responses.forEach {
             when {
-                index > 0 -> result.append(separator)
+                it.startsWith("4") -> {
+                    clientErrors++
+                }
+                it.startsWith("5") -> {
+                    serverErrors++
+                }
             }
-            result.append(element)
         }
-
-        result.append(postfix)
-        return result.toString()
+        println("$clientErrors client errors, $serverErrors server errors")
     }
-    val list = listOf(1, 2, 3)
-    println(joinToString(collection = list, separator = ",", prefix = "#", postfix = "."))
+
+    val responses = listOf("200 OK", "418 I'm a teapot", "500 Internal Server Error")
+    printProblemCounts(responses)
 }
