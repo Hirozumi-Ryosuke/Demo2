@@ -1,4 +1,4 @@
-package com.example.demo.kotlin_
+package com.example.demo.competitive_programming
 
 data class Person(
     val name: String,
