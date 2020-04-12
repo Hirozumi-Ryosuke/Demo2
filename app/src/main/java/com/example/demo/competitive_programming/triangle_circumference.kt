@@ -1,4 +1,4 @@
-package com.example.demo
+package com.example.demo.competitive_programming
 
 fun main(){
     val n = readLine()!!.toInt()

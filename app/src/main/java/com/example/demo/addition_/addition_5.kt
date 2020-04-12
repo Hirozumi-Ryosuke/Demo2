@@ -5,7 +5,7 @@ import java.util.HashSet
 fun main() {
     class CountingSet<T>(
         val innerSet: MutableCollection<T> = HashSet<T>()
-    ) : MutableCollection<T> by innerSet {
+    ) : MutableCollection<T> by innerSet{
 
         var objectsAdded = 0
 
@@ -21,7 +21,7 @@ fun main() {
     }
 
     val cset = CountingSet<Int>().also {
-        it.addAll(listOf(1, 1, 2))
+        it.addAll(listOf(1, 1, 2, 5, 10, 1 ))
     }
     println(cset.objectsAdded.toString() + " objects were added, " + cset.size + " remain")
 }

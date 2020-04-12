@@ -5,15 +5,13 @@ import java.io.StringReader
 
 fun main() {
     fun readNumber(reader: BufferedReader): Int? {
-        try {
+        return try {
             val line = reader.readLine()
-            return Integer.parseInt(line)
-        }
-        catch (e: NumberFormatException) {
-            return null
-        }
-        finally {
-            reader.close()
+            Integer.parseInt(line)
+        } catch (e: NumberFormatException) {
+            null
+        } finally {
+            reader.run { close() }
         }
     }
     val reader = BufferedReader(StringReader("239"))
