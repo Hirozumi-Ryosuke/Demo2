@@ -1,10 +1,10 @@
 package com.example.demo.kotlin_
 
-import android.os.Build
+import android.os.Build.VERSION_CODES.*
 import androidx.annotation.RequiresApi
 import java.time.LocalDate
 
-@RequiresApi(Build.VERSION_CODES.O)
+@RequiresApi(O)
 fun main() {
     operator fun ClosedRange<LocalDate>.iterator(): Iterator<LocalDate> =
         object : Iterator<LocalDate> {
@@ -13,7 +13,7 @@ fun main() {
             override fun hasNext() =
                 current <= endInclusive
 
-            @RequiresApi(Build.VERSION_CODES.O)
+            @RequiresApi(O)
             override fun next() = current.apply {
                 current = plusDays(1)
             }
