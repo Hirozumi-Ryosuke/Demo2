@@ -6,7 +6,7 @@ import java.time.LocalDate
 
 @RequiresApi(O)
 fun main() {
-    operator fun ClosedRange<LocalDate>.iterator(): Iterator<LocalDate> =
+    operator fun ClosedRange<LocalDate>.iterator() =
         object : Iterator<LocalDate> {
             var current = start
 
