@@ -1,16 +1,15 @@
 package com.example.demo.kotlin_
 
 fun main() {
-    readLine()!!.toInt()
-    val s = readLine()!!
-    val fl = readLine()!!.split(" ").map { it.toInt() }
-    fun f(c: Char) = '0' + fl[c - '1']
-    val i = s.indexOfFirst { c -> f(c) > c }.takeIf { it >= 0 } ?: s.length
-    val j = s.withIndex().indexOfFirst { (j, c) -> j > i && f(c) < c }.takeIf { it >= 0 } ?: s.length
-    val ans =
-        s.substring(0, i) +
-        s.substring(i, j).map { c -> f(c) }.joinToString("") +
-        s.substring(j)
-    println(ans)
+    data class Person(val name: String, val age: Int? = null) {
 
+        fun isOlderThan(other: Person): Boolean? {
+            if(age == null || other.age == null)
+                return null
+            return age > other.age
+        }
+    }
+    println(Person("Sam", 35).isOlderThan(Person("Kay", 29)))
+    println(Person("Sam", 35).isOlderThan(Person("Amy", 42)))
+    println(Person("Sam", 35).isOlderThan(Person("Jane")))
 }
