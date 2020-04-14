@@ -10,13 +10,12 @@ import java.lang.NumberFormatException
 fun main() {
     fun readNumbers(reader: BufferedReader): List<Int?> {
         val result = ArrayList<Int?>()
-        for (line in reader.lineSequence()) {
+        reader.lineSequence().forEach { line ->
             try {
                 val number = line.toInt()
                 result.add(number)
-            }
-            catch (e: NumberFormatException) {
-                return.add(null)
+            } catch (e: NumberFormatException) {
+                result.add(null)
             }
         }
         return result
@@ -25,11 +24,14 @@ fun main() {
     fun addValidNumbers(numbers: List<Int?>) {
         var sumOfValidNumbers = 0
         var invalidNumbers = 0
-        for (number in numbers) {
-            if (number != null) {
-                sumOfValidNumbers += number
-            } else {
-                invalidNumbers++
+        numbers.forEach { number ->
+            when {
+                number != null -> {
+                    sumOfValidNumbers += number
+                }
+                else -> {
+                    invalidNumbers++
+                }
             }
         }
         println("Sum of valid numbers: $sumOfValidNumbers")
