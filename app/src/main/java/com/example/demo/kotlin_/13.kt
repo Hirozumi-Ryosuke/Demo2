@@ -1,8 +1,5 @@
 package com.example.demo.kotlin_
 
-import androidx.core.view.OneShotPreDrawListener
-import androidx.core.view.OneShotPreDrawListener.add
-import kotlinx.android.synthetic.*
 import java.io.BufferedReader
 import java.io.StringReader
 import java.lang.NumberFormatException
@@ -26,12 +23,8 @@ fun main() {
         var invalidNumbers = 0
         numbers.forEach { number ->
             when {
-                number != null -> {
-                    sumOfValidNumbers += number
-                }
-                else -> {
-                    invalidNumbers++
-                }
+                number != null -> sumOfValidNumbers += number
+                else -> invalidNumbers++
             }
         }
         println("Sum of valid numbers: $sumOfValidNumbers")
