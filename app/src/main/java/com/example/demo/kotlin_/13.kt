@@ -1,36 +1,16 @@
 package com.example.demo.kotlin_
 
-import java.io.BufferedReader
-import java.io.StringReader
-import java.lang.NumberFormatException
-
 fun main() {
-    fun readNumbers(reader: BufferedReader): List<Int?> {
-        val result = ArrayList<Int?>()
-        reader.lineSequence().forEach { line ->
-            try {
-                val number = line.toInt()
-                result.add(number)
-            } catch (e: NumberFormatException) {
-                result.add(null)
-            }
-        }
-        return result
-    }
+    val n = readLine()!!.toInt()
+    val s = readLine()!!
+    val fl = readLine()!!.split(" ").map { it.toInt() }
+    fun f(c: Char) = '0' + fl[c - '1']
+    val i = s.indexOfFirst { c -> f(c) > c }.takeIf { it >= 0 } ?: s.length
+    val j = s.withIndex().indexOfFirst { (j, c) -> j > i && f(c) < c }.takeIf { it >= 0 } ?: s.length
+    val ans =
+        s.substring(0, i) +
+                s.substring(i, j).map { c -> f(c) }.joinToString("") +
+                        s.substring(j)
+    println(ans)
 
-    fun addValidNumbers(numbers: List<Int?>) {
-        var sumOfValidNumbers = 0
-        var invalidNumbers = 0
-        numbers.forEach { number ->
-            when {
-                number != null -> sumOfValidNumbers += number
-                else -> invalidNumbers++
-            }
-        }
-        println("Sum of valid numbers: $sumOfValidNumbers")
-        println("Invalid numbers: $invalidNumbers")
-    }
-    val reader = BufferedReader(StringReader("1\nabc\n42"))
-    val numbers = readNumbers(reader)
-    addValidNumbers(numbers)
 }
