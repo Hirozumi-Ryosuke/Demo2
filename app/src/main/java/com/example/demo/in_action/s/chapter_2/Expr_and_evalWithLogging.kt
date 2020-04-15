@@ -1,10 +1,11 @@
-package com.example.demo.kotlin_in_action
+package com.example.demo.in_action.s.chapter_2
 
 import java.lang.IllegalArgumentException
 
 interface Expr
 class Num(val value: Int): Expr
-class Sum(val left: Expr, val right: Expr): Expr
+class Sum(val left: Expr, val right: Expr):
+    Expr
 
 fun main() {
     fun eval(e: Expr): Int =
@@ -16,7 +17,11 @@ fun main() {
             else ->
                 throw IllegalArgumentException("Unknown expression")
         }
-    println(eval(Sum(Sum(Num(1), Num(2)), Num(4))))
+    println(eval(Sum(
+        Sum(
+            Num(1),
+            Num(2)),
+        Num(4))))
 
     fun evalWithLogging(e: Expr): Int =
         when (e) {
@@ -32,7 +37,10 @@ fun main() {
             }
             else -> throw IllegalArgumentException("Unknown expression")
         }
-    println(evalWithLogging(Sum(Sum(Num(1), Num(2)), Num(4))))
+    println(evalWithLogging(Sum(
+        Sum(Num(
+            1), Num(2)),
+        Num(4))))
 }
 
 

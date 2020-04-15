@@ -2,7 +2,9 @@ package com.example.demo.kotlin_
 
 fun main() {
     fun printEntries(map: Map<String, String>) {
-        map.forEach { (key, value) ->
+        map.entries.forEach { entry ->
+            val key = entry.component1()
+            val value = entry.component2()
             println("$key -> $value")
         }
     }

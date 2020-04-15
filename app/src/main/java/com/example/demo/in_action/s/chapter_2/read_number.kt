@@ -1,4 +1,4 @@
-package com.example.demo.in_action.chapter_2
+package com.example.demo.in_action.s.chapter_2
 
 import java.io.BufferedReader
 import java.io.StringReader
@@ -14,6 +14,6 @@ fun main() {
 
         println(number)
     }
-    val reader = BufferedReader(StringReader("not a number"))
-    println(readNumber(reader))
+    val reader = BufferedReader(StringReader("239"))
+    readNumber(reader)
 }

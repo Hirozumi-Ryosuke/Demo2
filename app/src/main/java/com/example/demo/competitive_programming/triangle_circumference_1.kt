@@ -5,15 +5,17 @@ fun main(){
     val sides = readLine()!!.split(" ").map(String::toInt)
     val ans = 0
 
-    (0..n).forEach { i ->
-        (0..(n - 1)).forEach { j ->
-            (0..(n - 2)).forEach { k ->
-                val circumference = i + j + k
-                val twoSides = j + k
+    (0..n).forEach { x ->
+        (0..(n - 1)).forEach { y ->
+            (0..(n - 2)).forEach { z ->
+                val circumference = x + y + z
+                val twoSides = x + y
                 when {
-                twoSides > i -> {
+                twoSides > z -> {
                     println(circumference)
                     return
+                } else -> {
+                    println("0")
                 }
             }
         }

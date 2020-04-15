@@ -1,4 +1,4 @@
-package com.example.demo.kotlin_in_action
+package com.example.demo.in_action.s.chapter_2
 
 fun main() {
     fun isLetter(c: Char) = c in 'a'..'z' || c in 'A'..'Z'

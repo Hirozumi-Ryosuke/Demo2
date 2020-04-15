@@ -1,4 +1,4 @@
-package com.example.demo.in_action.chapter_2
+package com.example.demo.in_action.s.chapter_2
 
 fun main() {
     fun recognize(c: Char) = when(c) {

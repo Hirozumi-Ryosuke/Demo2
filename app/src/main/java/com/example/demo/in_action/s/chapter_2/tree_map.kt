@@ -1,4 +1,4 @@
-package com.example.demo.kotlin_in_action
+package com.example.demo.in_action.s.chapter_2
 
 import java.util.*
 

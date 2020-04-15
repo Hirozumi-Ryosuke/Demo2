@@ -1,4 +1,4 @@
-package com.example.demo.in_action.chapter_2.chapter_3
+package com.example.demo.in_action.s.chapter_3
 
 import java.lang.StringBuilder
 
