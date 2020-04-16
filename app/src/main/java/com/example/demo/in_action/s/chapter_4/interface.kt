@@ -19,6 +19,7 @@ class Button : Clickable, Focusable {
         super<Focusable>.showOff()
     }
 }
+
 fun main() {
     val button = Button()
     button.showOff()
