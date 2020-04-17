@@ -2,7 +2,7 @@ package com.example.demo.in_action.s.chapter_4
 
 fun main() {
     class CountingSet<T>(
-        val innerSet: MutableCollection<T> = HashSet<T>()
+        val innerSet: MutableCollection<T> = HashSet()
     ) : MutableCollection<T> by innerSet {
 
         var objectsAdded = 0
@@ -23,4 +23,7 @@ fun main() {
     val cset2 = CountingSet<Int>()
     cset2.addAll(listOf(1, 1, 1))
     println("${cset2.objectsAdded} objects were added, ${cset2.size} remain")
+    val cset3 = CountingSet<Int>()
+    cset3.addAll(listOf(1, 2, 1))
+    println("${cset3.objectsAdded} objects were added, ${cset3.size} remain")
 }
