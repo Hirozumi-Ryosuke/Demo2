@@ -1,15 +1,20 @@
 package com.example.demo.in_action.s.chapter_4
 
-class Client(val name: String, private val postalCode: Int) {
+fun main() {
 
-    override fun toString() = "Client(name = $name, postalCode = $postalCode)"
+data class Client(val name: String, private val postalCode: Int) {
+/*    override fun toString() = "Client(name = $name, postalCode = $postalCode)"
 
     override fun equals(other: Any?): Boolean {
         return when (other) {
             null, !is Client -> false
             else -> name == other.name && postalCode == other.postalCode
         }
-    }
+    }*/
+
+/*
+    override fun hashCode() = name.hashCode() * 31 + postalCode
+*/
 /*
         if (other == null || other !is Client)
             return false
@@ -17,16 +22,18 @@ class Client(val name: String, private val postalCode: Int) {
                 postalCode == other.postalCode
     }
 */
-    override fun hashCode(): Int {
+/*    override fun hashCode(): Int {
         var result = name.hashCode()
         result = 31 * result + postalCode
         return result
-    }
+    }*/
 }
-fun main() {
+
     val client1 = Client("Alice", 342562)
     val client2 = Client("Alice", 342562)
     println(client1)
     println(client2)
     println(client1 == client2)
+    val processed = hashSetOf(Client("Alice", 342562))
+    println(processed.contains(Client("Alice", 342562)))
 }
