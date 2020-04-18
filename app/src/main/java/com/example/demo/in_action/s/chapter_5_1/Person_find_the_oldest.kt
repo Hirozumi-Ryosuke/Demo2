@@ -1,4 +1,4 @@
-package com.example.demo.in_action.s.chapter_5
+package com.example.demo.in_action.s.chapter_5_1
 
 data class Person(val name: String, val age: Int)
 
