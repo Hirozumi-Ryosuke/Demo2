@@ -25,8 +25,4 @@ fun main() {
         .filter { it.startsWith("A") }
         .toList()
     )
-    println(people.asSequence()
-        .map(Person::name)
-        .filter { it.startsWith("A") }
-    )
 }
