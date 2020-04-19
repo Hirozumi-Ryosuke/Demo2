@@ -7,8 +7,11 @@ class Company(val name: String, val address: Address?)
 class Person(val name: String, val company: Company?)
 
 fun main() {
+    /*fun Person.countryName() = company?.address?.country?: "Unknown"
+    val person = Person("Dmitry", null)*/
     fun Person.countryName(): String {
-        return company?.address?.country ?: "Unknown"
+        val country = this.company?.address?.country
+        return country ?: "Unknown"
     }
     val person = Person("Dmitry", null)
     println(person.countryName())
