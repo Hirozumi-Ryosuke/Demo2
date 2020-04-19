@@ -11,7 +11,7 @@ fun main() {
     val person = Person("Dmitry", null)*/
     fun Person.countryName(): String {
         val country = this.company?.address?.country
-        return country ?: "Unknown"
+        return if (country != null) country else "Unknown"
     }
     val person = Person("Dmitry", null)
     println(person.countryName())
