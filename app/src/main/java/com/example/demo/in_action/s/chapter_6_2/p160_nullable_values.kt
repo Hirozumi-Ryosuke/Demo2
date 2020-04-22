@@ -21,18 +21,20 @@ fun main() {
         var sumOfValidNumbers = 0
         var invalidNumbers = 0
         for (number in numbers) {
-            if (number != null) {
-                sumOfValidNumbers += number
-            } else {
-                invalidNumbers++
+            when {
+                number != null -> sumOfValidNumbers += number
+                else -> invalidNumbers++
             }
         }
         println("Sum of valid numbers: $sumOfValidNumbers")
         println("Invalid numbers: $invalidNumbers")
     }
 
-    val reader = BufferedReader(StringReader("1\nabc\n42"))
-    val numbers =readNumbers(reader)
+    val reader = BufferedReader(StringReader("1\nabc\n42\n28\nddd"))
+    val numbers = readNumbers(reader)
     addValidNumbers(numbers)
 
+    val validNumbers = numbers.filterNotNull()
+    println("Sum of valid: ${validNumbers.sum()}")
+    println("Invalid numbers: ${numbers.size - validNumbers.size}")
 }

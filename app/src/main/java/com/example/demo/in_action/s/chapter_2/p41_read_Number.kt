@@ -16,4 +16,7 @@ fun main() {
     }
     val reader = BufferedReader(StringReader("239"))
     readNumber(reader)
+
+    val reader2 = BufferedReader(StringReader("not a number"))
+    readNumber(reader2)
 }

@@ -1,5 +1,6 @@
 package com.example.demo.kotlin_1
 
+/*
 fun main() {
     val answer = { x: Int, y: Int -> x * y }
     println(when {
@@ -7,12 +8,11 @@ fun main() {
         else -> "odd"
     })
 }
+*/
 
-private operator fun <P1, P2, R> ((P1, P2) -> R).rem(r: R): Int {
-    P1 -> {
-        P2 -> this(P1, P2)
-    }
-}
+/*private operator fun <P1, P2, R> ((P1, P2) -> R).rem(r: R): Int {
+
+}*/
 
 
 
