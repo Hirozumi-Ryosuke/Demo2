@@ -1,7 +1,7 @@
 package com.example.demo.in_action.s.chapter_7_2
 
 class Person(val name: String) {
-    private var _emails: List<Email>? = null
+/*    private var _emails: List<Email>? = null
 
     val emails: List<Email>
         get() {
@@ -9,7 +9,8 @@ class Person(val name: String) {
                 _emails = loadEmails(this)
             }
             return _emails!!
-        }
+        }*/
+    val emails by lazy { loadEmails(this) }
 }
 
 class Email {/*...*/}
@@ -20,7 +21,6 @@ fun loadEmails(person: Person): List<Email> {
 
 fun main() {
     val p = Person("Alice")
-    p.emails
     p.emails
     p.emails
 }

@@ -1,4 +1,4 @@
-package com.example.demo.in_action.s.chapter_7
+package com.example.demo.in_action.s.chapter_7_1
 
 fun main() {
     var point = Point(1, 2)

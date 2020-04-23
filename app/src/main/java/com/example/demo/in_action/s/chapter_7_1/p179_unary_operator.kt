@@ -1,4 +1,4 @@
-package com.example.demo.in_action.s.chapter_7
+package com.example.demo.in_action.s.chapter_7_1
 
 operator fun Point.unaryMinus(): Point {
     return Point(-x, -y)

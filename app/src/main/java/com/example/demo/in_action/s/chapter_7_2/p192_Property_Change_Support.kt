@@ -43,7 +43,7 @@ fun main() {
         PropertyChangeListener { event ->
             println(
                 "Property ${event.propertyName} changed " +
-                    "from ${event.oldValue} to ${event.newValue}"
+                        "from ${event.oldValue} to ${event.newValue}"
             )
         }
     )

@@ -1,4 +1,4 @@
-package com.example.demo.in_action.s.chapter_7
+package com.example.demo.in_action.s.chapter_7_1
 
 data class Point(val x: Int, val y: Int) {
     operator fun plus(other: Point): Point {
