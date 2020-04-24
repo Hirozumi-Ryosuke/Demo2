@@ -1,6 +1,15 @@
 package com.example.demo.in_action.s.chapter_7_2
 
-class Person(val name: String) {
+fun main() {
+
+    class Person(val name: String) {
+
+    inner class Email {/*...*/}
+
+    fun loadEmails(person: Person): List<Email> {
+        println("Load emails for ${person.name}")
+        return listOf(/*...*/)
+    }
 /*    private var _emails: List<Email>? = null
 
     val emails: List<Email>
@@ -13,13 +22,6 @@ class Person(val name: String) {
     val emails by lazy { loadEmails(this) }
 }
 
-class Email {/*...*/}
-fun loadEmails(person: Person): List<Email> {
-    println("Load emails for ${person.name}")
-    return listOf(/*...*/)
-}
-
-fun main() {
     val p = Person("Alice")
     p.emails
     p.emails

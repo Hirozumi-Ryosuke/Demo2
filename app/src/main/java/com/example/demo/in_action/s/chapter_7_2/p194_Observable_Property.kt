@@ -4,9 +4,8 @@ import java.beans.PropertyChangeListener
 import java.beans.PropertyChangeSupport
 import kotlin.reflect.KProperty
 
-
 class ObservableProperty(
-    var propValue: Int, val changeSupport: PropertyChangeSupport
+    var propValue: Int, private val changeSupport: PropertyChangeSupport
 ) {
     operator fun getValue(p: Person, prop: KProperty<*>): Int = propValue
 
@@ -16,9 +15,10 @@ class ObservableProperty(
         changeSupport.firePropertyChange(prop.name, oldValue, newValue)
     }
 }
+
 class Person(val name: String, age: Int, salary: Int): PropertyChangeAware() {
     var age: Int by ObservableProperty(age, changeSupport)
-    val salaly: Int by ObservableProperty(salary, changeSupport)
+    var salary: Int by ObservableProperty(salary, changeSupport)
 }
 
 fun main() {
