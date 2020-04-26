@@ -1,4 +1,4 @@
-package com.example.demo.in_action.s.chapter_8_1
+package com.example.demo.in_action.s.chapter_8
 
 fun twoAndThree(operation: (Int, Int) -> Int) {
     val result = operation(2, 3)

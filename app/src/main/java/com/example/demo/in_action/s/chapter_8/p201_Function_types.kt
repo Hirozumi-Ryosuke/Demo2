@@ -1,4 +1,4 @@
-package com.example.demo.in_action.s.chapter_8_1
+package com.example.demo.in_action.s.chapter_8
 
 fun main() {
     val sum: (Int, Int) -> Unit = { x, y -> println(x + y) }
